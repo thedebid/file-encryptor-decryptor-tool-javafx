@@ -1,0 +1,24 @@
+.app-box {
+    -fx-padding: 10;
+    -fx-background-color: white;
+}
+
+.padding-10 {
+    -fx-padding:  5;
+}
+
+.padding-T10 {
+    -fx-padding:  10 0 0 0;
+}
+
+.padding-R10 {
+    -fx-padding:  0 10 0 0;
+}
+
+.padding-B10 {
+    -fx-padding:  0 0 10 0;
+}
+
+.padding-L10 {
+    -fx-padding:  0 0 0 10;
+}

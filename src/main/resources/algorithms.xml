@@ -1,0 +1,14 @@
+<algorithms>
+    <algorithm>
+        <key>alg001</key>
+        <name>DES</name>
+    </algorithm>
+    <algorithm>
+        <key>alg002</key>
+        <name>AES</name>
+    </algorithm>
+    <algorithm>
+        <key>alg003</key>
+        <name>GCM</name>
+    </algorithm>
+</algorithms>

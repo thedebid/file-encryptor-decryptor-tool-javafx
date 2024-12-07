@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import org.cryptic.fileencryptordecryptortool.ui.controls.buttons.FocusedButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.skin.TitledPaneSkin.TitleRegion?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.cryptic.fileencryptordecryptortool.controller.MainController"
+      stylesheets="@app.css"
+      minHeight="390"
+>
+    <TitledPane text="Options" collapsible="false" VBox.vgrow="ALWAYS" styleClass="padding-10">
+        <VBox spacing="5" VBox.vgrow="ALWAYS">
+            <GridPane alignment="CENTER" VBox.vgrow="ALWAYS">
+                <Label text="Source location" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="padding-R10"/>
+                <TextField GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS" fx:id="sourceFilePathTextField"/>
+                <FocusedButton text=".." GridPane.columnIndex="3" GridPane.rowIndex="0" onAction="#handleOpenSourceDirectory"/>
+
+
+                <Label text="Destination location" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.hgrow="ALWAYS" fx:id="destinationFilePathTextField"/>
+                <FocusedButton text=".." GridPane.columnIndex="3" GridPane.rowIndex="1" fx:id="destinationDirectoryOpenFocusedButton" onAction="#handleOpenDestDirectory"/>
+
+            </GridPane>
+            <GridPane alignment="CENTER" styleClass="padding-T10" VBox.vgrow="ALWAYS">
+                <HBox spacing="30">
+                    <GridPane GridPane.columnIndex="0" GridPane.rowIndex="2"
+                              alignment="CENTER" GridPane.hgrow="ALWAYS">
+                        <CheckBox text="Recursive Replace" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                                  GridPane.hgrow="ALWAYS" fx:id="recursiveReplaceCheckBox" onAction="#handleReplaceAction"/>
+                    </GridPane>
+
+                    <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2"
+                              alignment="CENTER">
+                        <Label text="Filters" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="padding-R10"/>
+                        <TextField text="xml, lsc" GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="filtersTextField"/>
+                    </GridPane>
+
+                    <GridPane GridPane.columnIndex="3" GridPane.rowIndex="2"
+                              alignment="CENTER">
+                        <Label text="Encryption" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                               styleClass="padding-R10"/>
+                        <ComboBox promptText="Choose" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#handleEncryptionAlgorithmSelection" fx:id="encryptionAlgorithmComboBox"/>
+                    </GridPane>
+
+
+                    <HBox GridPane.columnIndex="4" GridPane.rowIndex="2"
+                          alignment="CENTER">
+                        <HBox spacing="10">
+                            <Button text="Encrypt" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#handleEncryptButtonClick"/>
+                            <Button text="Decrypt" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#handleDecryptButtonClick"/>
+                        </HBox>
+
+                    </HBox>
+                </HBox>
+            </GridPane>
+        </VBox>
+    </TitledPane>
+    <TitledPane text="Output" collapsible="false" styleClass="padding-10" VBox.vgrow="ALWAYS">
+        <TextArea disable="true" styleClass="" VBox.vgrow="ALWAYS" fx:id="outputTextArea"/>
+    </TitledPane>
+
+</VBox>
